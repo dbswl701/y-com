@@ -1,10 +1,11 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
+import zLogo from "../../public/zlogo.png";
 
 export default function Home() {
   return (
-    <div>
+    <>
       {/* 메인 페이지의 큰 로고 */}
       <div className={styles.left}>
         <Image src={zLogo} alt="logo" />
@@ -20,6 +21,6 @@ export default function Home() {
           로그인
         </Link>
       </div>
-    </div>
+    </>
   );
 }
