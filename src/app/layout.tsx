@@ -21,3 +21,7 @@ export default function RootLayout({ children }: Props) {
     </html>
   );
 }
+
+// 레이아웃 입장에서
+// 주소가 localhost:3000일 때는 children -> page.tsx, modal -> @modal/default.tsx => 강의에서는 이 modal을 못찾아서 404
+// 주소가 localhost:3000/i/flow/login일 때는 children -> i/flow/login/page.tsx, modal -> @modal/i/flow/login/page.tsx
