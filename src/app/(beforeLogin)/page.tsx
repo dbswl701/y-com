@@ -6,7 +6,6 @@ import zLogo from "../../../public/zlogo.png";
 export default function Home() {
   return (
     <>
-      {/* 메인 페이지의 큰 로고 */}
       <div className={styles.left}>
         <Image src={zLogo} alt="logo" />
       </div>
