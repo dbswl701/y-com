@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import ZLogo from "../../../public/zlogo.png";
 import NavMenu from "./_component/NavMenu";
+import LogoutButton from "./_component/LogoutButton";
 
 export default function AfterLoginLayout({
   children,
@@ -28,6 +29,7 @@ export default function AfterLoginLayout({
                 게시하기
               </Link>
             </nav>
+            <LogoutButton />
           </div>
         </section>
       </header>

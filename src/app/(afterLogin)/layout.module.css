@@ -16,15 +16,21 @@
   height: 100dvh;
 }
 
-.leftSection nav li {
-  list-style-type: none;
-}
-
 .leftSectionFixed {
   background-color: orange;
   position: fixed;
   width: inherit;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftSectionFixed nav {
+  flex: 1;
+}
+
+.leftSectionFixed nav li {
+  list-style-type: none;
 }
 
 .logo {
