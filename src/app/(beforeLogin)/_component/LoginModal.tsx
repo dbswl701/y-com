@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-// import style from "@/app/page.module.css";
 import style from "./login.module.css";
 
 export default function LoginModal() {
