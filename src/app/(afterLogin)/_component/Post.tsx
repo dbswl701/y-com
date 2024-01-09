@@ -29,6 +29,9 @@ export default function Post({ noImage }: Props) {
   };
   if (Math.random() > 0.5 && !noImage) {
     target.Images.push({ imageId: 1, link: faker.image.urlLoremFlickr() });
+    target.Images.push({ imageId: 2, link: faker.image.urlLoremFlickr() });
+    target.Images.push({ imageId: 3, link: faker.image.urlLoremFlickr() });
+    target.Images.push({ imageId: 4, link: faker.image.urlLoremFlickr() });
   }
   return (
     // <article className={style.post}>
@@ -53,7 +56,7 @@ export default function Post({ noImage }: Props) {
             </span>
           </div>
           <div>{target.content}</div>
-          <div className={style.postImageSection}>
+          <div>
             <PostImages post={target} />
           </div>
           <ActionButtons />
