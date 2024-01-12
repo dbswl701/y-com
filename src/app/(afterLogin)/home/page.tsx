@@ -14,7 +14,7 @@ import PostRecommends from "./_component/PostRecommends";
 export default async function Home() {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
-    queryKey: ["post", "recommends"],
+    queryKey: ["posts", "recommends"],
     queryFn: getPostRecommends,
   });
   const dehydractedState = dehydrate(queryClient);
