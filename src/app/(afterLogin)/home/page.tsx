@@ -8,24 +8,14 @@ import PostForm from "./_component/PostForm";
 import Tab from "./_component/Tab";
 import TabProvider from "./_component/TabProvider";
 import style from "./home.module.css";
-
-async function getPostRecommend() {
-  const res = await fetch(`http://lcoalhost:9090/api/postRecommends`, {
-    next: { tags: ["posts", "recommends"] },
-  });
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-
-  return res.json();
-}
+import { getPostRecommends } from "./_lib/getPostRecommends";
+import PostRecommends from "./_component/PostRecommends";
 
 export default async function Home() {
   const queryClient = new QueryClient();
   await queryClient.prefetchQuery({
     queryKey: ["post", "recommends"],
-    queryFn: getPostRecommend,
+    queryFn: getPostRecommends,
   });
   const dehydractedState = dehydrate(queryClient);
 
@@ -36,18 +26,7 @@ export default async function Home() {
         <TabProvider>
           <Tab />
           <PostForm />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
-          <Post />
+          <PostRecommends />
         </TabProvider>
       </HydrationBoundary>
     </main>
