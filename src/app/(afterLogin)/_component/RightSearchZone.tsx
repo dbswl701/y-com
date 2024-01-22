@@ -11,18 +11,14 @@ export default function RightSearchZone() {
   const router = useRouter();
 
   const onChangeAll = () => {
-    let url = `/search?q=${searchParams.get(`q`)}`;
-    if (searchParams.has("f")) {
-      url += `&f=${searchParams.get("f")}`;
-    }
-    router.replace(url);
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.set("pf", "on");
+    router.replace(`/search?${newSearchParams.toString()}`);
   };
   const onChangeFollow = () => {
-    let url = `/search?q=${searchParams.get(`q`)}&pf=on`;
-    if (searchParams.has("f")) {
-      url += `&f=${searchParams.get("f")}`;
-    }
-    router.replace(url);
+    const newSearchParams = new URLSearchParams(searchParams);
+    newSearchParams.delete("pf");
+    router.replace(`/search?${newSearchParams.toString()}`);
   };
 
   if (pathname === "/explore") return null;
