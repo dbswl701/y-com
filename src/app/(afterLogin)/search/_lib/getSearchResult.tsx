@@ -14,7 +14,7 @@ export const getSearchResult: QueryFunction<
       next: {
         tags: ["posts", "search", searchParams.q],
       },
-      cache: "no-store",
+      // cache: "no-store",
     }
   );
   // The return value is *not* serialized
