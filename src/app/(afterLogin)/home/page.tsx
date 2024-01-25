@@ -12,9 +12,10 @@ import TapDecider from "./_component/TapDecider";
 
 export default async function Home() {
   const queryClient = new QueryClient();
-  await queryClient.prefetchQuery({
+  await queryClient.prefetchInfiniteQuery({
     queryKey: ["posts", "recommends"],
     queryFn: getPostRecommends,
+    initialPageParam: 0,
   });
   const dehydractedState = dehydrate(queryClient);
 
